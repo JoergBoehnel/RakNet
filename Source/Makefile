@@ -8,5 +8,5 @@ all:
 
 clean:
 	rm -f ../../lib/RakNetLinux32.so
-	rm -f ../../lib/RakNetLinux32.so
+	rm -f ../../lib/RakNetLinux64.so
 
