@@ -114,6 +114,7 @@ bool NatPunchthroughClient::OpenNATGroup(DataStructures::List<RakNetGUID> destin
 */
 void NatPunchthroughClient::SetDebugInterface(NatPunchthroughDebugInterface *i)
 {
+return;
 	natPunchthroughDebugInterface=i;
 }
 void NatPunchthroughClient::Update(void)
@@ -842,7 +843,7 @@ void NatPunchthroughClient::SendOutOfBand(SystemAddress sa, MessageID oobId)
 	char ipAddressString[32];
 	sa.ToString(false, ipAddressString);
 	rakPeerInterface->SendOutOfBand((const char*) ipAddressString,sa.GetPort(),(const char*) oob.GetData(),oob.GetNumberOfBytesUsed());
-
+/*
 	if (natPunchthroughDebugInterface)
 	{
 		sa.ToString(true,ipAddressString);
@@ -859,6 +860,7 @@ void NatPunchthroughClient::SendOutOfBand(SystemAddress sa, MessageID oobId)
 		else
 			natPunchthroughDebugInterface->OnClientMessage(RakNet::RakString("%I64d: %s: OOB ID_NAT_ESTABLISH_BIDIRECTIONAL to guid %s, system address %s.\n", serverTime, TestModeToString(sp.testMode), guidString, ipAddressString));
 	}
+*/
 }
 void NatPunchthroughClient::OnNewConnection(const SystemAddress &systemAddress, RakNetGUID rakNetGUID, bool isIncoming)
 {
